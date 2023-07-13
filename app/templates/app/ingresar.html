@@ -34,9 +34,13 @@
                     <label for="pass" class="label">Repetir Contraseña</label>
                     <input id="pass" type="password" class="input" data-type="contraseña">
                 </div>
-                <div class="group">
-                    <input type="submit" class="button" value="Registrarse">
-                </div>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="group">
+                        <input type="submit" class="button" value="Registrarse">
+                    </div>
+                </form>    
             </div>
         </div>
     </div>
